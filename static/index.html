@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antigravity Form Bot</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Left Panel: Configuration -->
+        <div class="panel config-panel">
+            <h2 class="title cyan-glow">⚙️ CONFIGURATION</h2>
+            
+            <div class="input-group">
+                <input type="text" id="url" placeholder="Google Form POST URL (ends with formResponse)">
+            </div>
+            <div class="input-group">
+                <label for="names" class="purple-text">Name List (One per line):</label>
+                <textarea id="names" rows="5"></textarea>
+            </div>
+            
+            <div class="input-group">
+                <label for="areas" class="purple-text">Area List (One per line):</label>
+                <textarea id="areas" rows="5"></textarea>
+            </div>
+            
+            <div class="toggle-group">
+                <label class="switch">
+                    <input type="checkbox" id="loop">
+                    <span class="slider round"></span>
+                </label>
+                <span class="toggle-label">Loop Names Infinitely</span>
+            </div>
+            
+            <div class="button-group">
+                <button id="start-btn" class="floating-btn purple-btn">START SEQUENCE</button>
+                <button id="stop-btn" class="floating-btn red-btn">ABORT</button>
+            </div>
+        </div>
+
+        <!-- Right Panel: Dashboard -->
+        <div class="panel dashboard-panel glassmorphism">
+            <h2 class="title cyan-glow">🛸 LIVE DASHBOARD</h2>
+            
+            <div class="dash-stat">
+                <h3>TOTAL SUBMISSIONS</h3>
+                <div id="total-val" class="stat-value white-text">0</div>
+            </div>
+            
+            <div class="dash-stat">
+                <h3 class="purple-text">CURRENT TARGET</h3>
+                <div id="target-val" class="stat-value purple-text">NONE</div>
+            </div>
+            
+            <div class="dash-stat countdown-container">
+                <div id="countdown-val" class="countdown-value cyan-glow-text">00:10</div>
+            </div>
+            
+            <div class="log-console">
+                <pre id="log-text">System idle...</pre>
+            </div>
+        </div>
+    </div>
+
+    <script src="/script.js"></script>
+</body>
+</html>

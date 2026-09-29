@@ -1,0 +1,243 @@
+:root {
+    --bg-color: #12121a;
+    --panel-bg: #1e1e2f;
+    --cyan: #00f3ff;
+    --purple: #8a2be2;
+    --red: #ff3366;
+    --glass-bg: rgba(30, 30, 47, 0.6);
+    --glass-border: rgba(0, 243, 255, 0.2);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    height: 80vh;
+    gap: 30px;
+}
+
+.panel {
+    flex: 1;
+    padding: 40px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.config-panel {
+    background-color: var(--panel-bg);
+}
+
+.dashboard-panel.glassmorphism {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.title {
+    font-weight: 900;
+    margin-top: 0;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+.cyan-glow {
+    color: var(--cyan);
+    text-shadow: 0 0 10px var(--cyan);
+}
+
+.cyan-glow-text {
+    color: var(--cyan);
+    text-shadow: 0 0 20px var(--cyan);
+}
+
+.purple-text {
+    color: var(--purple);
+}
+
+.white-text {
+    color: white;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+input[type="text"], textarea {
+    width: 100%;
+    background-color: rgba(0,0,0,0.3);
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 12px;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus, textarea:focus {
+    outline: none;
+    border-color: var(--cyan);
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
+}
+
+.toggle-group {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.toggle-label {
+    margin-left: 15px;
+    font-size: 14px;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #333;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: var(--cyan);
+  box-shadow: 0 0 10px var(--cyan);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    margin-top: auto;
+}
+
+.floating-btn {
+    flex: 1;
+    padding: 15px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+}
+
+.purple-btn {
+    background-color: var(--purple);
+}
+
+.red-btn {
+    background-color: var(--red);
+}
+
+.floating-btn:hover {
+    transform: translateY(-5px);
+    border-color: var(--cyan);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(0, 243, 255, 0.4);
+}
+
+.floating-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+    border-color: transparent;
+}
+
+.dash-stat {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.dash-stat h3 {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.countdown-container {
+    margin: 40px 0;
+}
+
+.countdown-value {
+    font-size: 80px;
+    font-weight: 900;
+}
+
+.log-console {
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 10px;
+    padding: 15px;
+    flex: 1;
+    overflow-y: auto;
+    font-family: monospace;
+    color: #a0a0b0;
+    font-size: 12px;
+}
+
+#log-text {
+    margin: 0;
+    white-space: pre-wrap;
+}
